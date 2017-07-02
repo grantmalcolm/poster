@@ -9,6 +9,8 @@ end
 gem 'devise'
 # UI components
 gem 'bootstrap-sass'
+# integration testing using assert_select
+gem 'rails-controller-testing'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
