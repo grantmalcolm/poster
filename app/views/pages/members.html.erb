@@ -1,2 +1,28 @@
-<h1>Pages#members</h1>
-<p>Find me in app/views/pages/members.html.erb</p>
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'today_logo' %>
+  </div>
+  <div class="col-md-6">
+    <h3>Members</h3><h4>who we are</h4>
+    <% @users.each do |member| %>
+      <div class="panel panel-default">
+         <div class="panel-body">
+           <span class="member-username">
+           <a href="/user/<%= member.username %>">
+             <strong><%= member.username %></strong>
+           </a>
+           </span>
+           <span class="member-join-date">
+           	 Joined: <%= member.created_at.to_date %>
+           </span>
+           <span class="member-num-posts">
+             0 Posts
+           </span>
+         </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-3">
+    <h3>Tags</h3><h4>what we're about</h4>
+  </div>  
+</div>

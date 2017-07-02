@@ -1,2 +1,20 @@
-<h1>Pages#userhome</h1>
-<p>Find me in app/views/pages/userhome.html.erb</p>
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'today_logo' %>
+    <% if user_signed_in? && current_user.username == @username %>
+      <h3>My to-do list</h3>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <% if user_signed_in? && current_user.username == @username %>
+      <h3>My Posts</h3>
+      <span id="notice"><%= notice %></span>
+      <p>Post form here if user logged in and this is his home</p>
+    <% else %>
+      <h3><%= @username %>&rsquo;s posts</h3>
+    <% end %>
+  </div>
+  <div class="col-md-3">
+    <h3>Tags</h3><h4>what we're about</h4>
+  </div>
+</div>

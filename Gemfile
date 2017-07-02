@@ -7,6 +7,8 @@ end
 
 # user authentication
 gem 'devise'
+# encryption used by devise
+gem 'bcrypt'
 # UI components
 gem 'bootstrap-sass'
 # integration testing using assert_select

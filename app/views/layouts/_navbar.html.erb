@@ -1,1 +1,5 @@
-<%= render 'layouts/navbar_guest' %>
+<% if user_signed_in? %>
+  	<%= render 'layouts/navbar_user' %>
+<% else %>
+  	<%= render 'layouts/navbar_guest' %>
+<% end %>

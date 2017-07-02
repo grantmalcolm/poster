@@ -3,6 +3,11 @@ class PagesController < ApplicationController
   end
 
   def userhome
+    if (User.find_by_username(params[:id]))
+      @username = params[:id]
+    else
+      redirect_to root_path, notice: "User not found."
+    end
   end
 
   def help
@@ -12,5 +17,6 @@ class PagesController < ApplicationController
   end
 
   def members
+    @users = User.all
   end
 end
