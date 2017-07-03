@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       @username = params[:id]
       the_user = User.find_by_username(params[:id])
       @posts = the_user.posts
-      if @username == current_user.username
+      if user_signed_in? && @username == current_user.username
         @post = current_user.posts.build
       end
     else
