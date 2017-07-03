@@ -10,7 +10,7 @@
     <% if @posts.empty? %>
       No posts yet.
     <% else %>
-      <% render partial: 'shared/post_form', locals: {theposts: @posts} %>
+      <%= render partial: 'shared/post_list' %>
     <% end %>
   </div>
   <div class="col-md-3">

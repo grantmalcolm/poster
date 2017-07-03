@@ -1,15 +1,15 @@
 <% the_date = Date.current %>
-      <% if theposts.first.thedate == the_date %>
+      <% if @posts.first.thedate == the_date %>
         <div class="post-date">
           Today
         </div>
       <% else %>
-        <% the_date = theposts.first.thedate %>
+        <% the_date = @posts.first.thedate %>
         <div class="post-date">
            <%= the_date %>
         </div>
       <% end %>
-      <% theposts.each do |post| %>
+      <% @posts.each do |post| %>
         <% if post.thedate != the_date %>
            <% the_date = post.thedate %>
            <div class="post-date">

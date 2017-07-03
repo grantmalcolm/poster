@@ -1,4 +1,5 @@
 <% @posts.each do |post| %>
+   <div class="panel panel-default">
    <div class="panel-heading">
         <%= post.user.username %> has:
         <%= post.title %>
@@ -8,5 +9,6 @@
     </div>
     <div class="panel-footer">
         Tags: <%= render_tags_as_links(post.taglist) %>
+    </div>
     </div>
 <% end %>

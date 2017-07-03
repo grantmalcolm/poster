@@ -13,7 +13,7 @@
     Add your own tags or choose from: 
     <select onchange="swap(this.value, 'post_taglist')">
       <option disabled selected value> -- choose tags-- </option>
-      <% thetags.each do |tag| %>
+      <% @tags.each do |tag| %>
         <option value="<%= tag.name %>"><%= tag.name %></option>
       <% end %>
     </select>
