@@ -1,2 +1,18 @@
-<h1>Pages#help</h1>
-<p>Find me in app/views/pages/help.html.erb</p>
+<h1>Today I have... Help</h1>
+<p>
+<strong>Today</strong> helps you keep track of your daily activities,
+and the activities of other Today members.
+Find out who these members are by clicking on <strong>Members</strong> at the top of the page.
+</p>
+<p>
+See their activities by clicking on their names in the list.
+</p>
+<p>
+Clicking on <%= link_to "Today...", root_url %> shows you everyone&rsquo;s posts;
+clicking on <%= link_to "Members", members_path %> shows you all members -
+you can click on a member&rsquo;s name to see all their posts.
+</p>
+<p>
+If you sign up, you have your own home page where you can see your posts
+and add a post (at most one per day).
+</p>
