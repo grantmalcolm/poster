@@ -2,7 +2,8 @@
 @import "bootstrap";
 
 body {
-	padding-top: 80px
+	padding-top: 80px;
+	padding-bottom: 60px;
 }
 
 .member-num-posts {
@@ -11,4 +12,9 @@ body {
 
 .member-join-date {
 	margin-left: 20px;
+}
+
+input, textarea, select {
+	width: 100%;
+	margin-bottom: 2px;
 }

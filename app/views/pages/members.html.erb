@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-3">
-    <%= render 'today_logo' %>
+    <%= render 'shared/today_logo' %>
   </div>
   <div class="col-md-6">
     <h3>Members</h3><h4>who we are</h4>
@@ -16,7 +16,7 @@
            	 Joined: <%= member.created_at.to_date %>
            </span>
            <span class="member-num-posts">
-             0 Posts
+             <%= member.posts.size %> Posts
            </span>
          </div>
       </div>

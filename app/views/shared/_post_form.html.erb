@@ -1,0 +1,20 @@
+<p>Tell us what you&rsquo;ve done today:</p>
+<%= form_for(@post) do |form| %>
+   <span id="notice"><%= notice %></span>
+   <div class="field">
+   	 <%= form.text_field :title, id: :post_title, placeholder: "Title: Today I have...", autofocus: true %>
+   </div>
+
+  <div class="field">
+    <%= form.text_area :body, id: :post_body, placeholder: "Give some details..." %>
+  </div>
+
+  <div class="field">
+    <%= form.label :taglist %>
+    <%= form.text_field :taglist, id: :post_taglist %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

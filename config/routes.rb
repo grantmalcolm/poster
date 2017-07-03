@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get '/members' => 'pages#members'    # list of members
   get '/help' => 'pages#help'          # help pages
   get '/about' => 'pages#about'        # project info
-  get '/users/sign_out' => 'pages#home'
-  
+  get '/posts/tag/:name' => 'posts#tags' # find tagged posts
+  # get '/users/sign_out' => 'pages#home'
+  resources :posts, only: [:create]
+
   root 'pages#home'
 end
