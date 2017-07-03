@@ -1,11 +1,17 @@
 class PostsController < ApplicationController
   def create
   	@post = current_user.posts.build(post_params)
-  	if @post.save
-  		flash[:success] = "Post sent"
+ 	respond_to do |f|
+  		if (@post.save)
+  			f.html { redirect_to root_url, notice: "Post saved"}
+  		else
+  			messages = ""
+  			@post.errors.full_messages.each do |message|
+  				messages += message
+  			end
+  			f.html { redirect_to root_url, notice: "Errors in post: #{messages}" }
+  		end
   	end
-  	# this redirection isn't correct
-  	redirect_to root_url
   end
 
   def tags

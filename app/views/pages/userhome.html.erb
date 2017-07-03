@@ -9,50 +9,18 @@
     <% if user_signed_in? && current_user.username == @username %>
       <h3>My Posts</h3>
       <span id="notice"><%= notice %></span>
-      <%= render 'shared/post_form' %>
+      <%= render partial: 'shared/post_form', locals: {thetags: @tags} %>
     <% else %>
       <h3><%= @username %>&rsquo;s posts</h3>
     <% end %>
     <% if @posts.empty? %>
        No posts yet.
     <% else %>
-   	  <% the_date = Date.current %>
-      <% if @posts.first.thedate == the_date %>
-        <div class="post-date">
-          Today
-        </div>
-      <% else %>
-        <% the_date = @posts.first.thedate %>
-        <div class="post-date">
-           <%= the_date %>
-        </div>
-      <% end %>
-      <% @posts.each do |post| %>
-        <% if post.thedate != the_date %>
-           <% the_date = post.thedate %>
-           <div class="post-date">
-              <%= the_date %>
-           </div>          
-        <% end %>
-        <div class="panel-heading">
-           <%= post.user.username %> has:
-           <%= post.title %>
-        </div>
-        <div class="panel-body">
-           <%= post.body %>
-        </div>
-        <div class="panel-footer">
-           Tags: <%= render_tags_as_links(post.taglist) %>
-        </div>
-      <% end %>
+      <%= render partial: 'shared/post_list', locals: {theposts: @posts} %>
     <% end %>
   </div>
   <div class="col-md-3">
     <h3>Tags</h3><h4>what we're about</h4>
-    <% @tags.each do |t| %>
-      <div class="atag-link">
-        <%= render_tags_as_links(t.name) %>
-      </div>
-    <% end %>
+    <%= render partial: 'all_tags', locals: {thetags: @tags} %>
   </div>
 </div>
